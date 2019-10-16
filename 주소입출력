@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	char addr[200];
+	cout << "주소를 입력하세요 : " << endl;
+	cin.getline(addr, 200, '\n');
+	cout << "주소정보는 아래와 같습니다." << endl;
+	cout << addr;
+	return 0;
+}
