@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "hello" << endl;
+	cout << "첫번째 맛보기입니다." << '\n';
+	int age = 18;
+	//cout << 5 << '#' << age << endl;
+	//cout << "당신의 나이를 입력하세요 : ";
+	//cin >> age;
+	//cout << "현재 당신의 나이는? " << age << endl;
+	int tall = 0;
+	cout << "나이와 키를 입력하세요 : ";
+	cin >> age >> tall;
+	cout << "나이 : " << age << "살" << endl;
+	cout << "키 : " << tall;
+	return 0;
+}
