@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+	string name;
+	int number, total;
+public:
+	Account(string n, int num, int t);
+	void deposit(int m);
+	string getOwner();
+	int inquiry();
+	int withdraw(int m);
+};
+
+Account::Account(string n, int num, int t) {
+	name = n;
+	number = num;
+	total = t;
+};
+
+void Account::deposit(int m) {
+	total = total + m;
+}
+
+string Account::getOwner() {
+	return name;
+}
+
+int Account::inquiry() {
+	return total;
+}
+
+int Account::withdraw(int m) {
+	total = total - m;
+	return m;
+}
+
+int main() {
+	Account a("Kitae", 1, 5000);//id 1번, 잔액 5000원, 이름이 kitae인 계좌생성
+	a.deposit(50000);//5000원 저금
+	cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
+	int money = a.withdraw(20000);//20000원 출금(withraw()는 출금한 실제 금액 리턴)
+	cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
+	return 0;
+}
