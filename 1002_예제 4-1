@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Circle {
+	int radius;
+public:
+	Circle() { radius = 1; }
+	Circle(int r) { radius = r; }
+	double getArea();
+};
+
+double Circle::getArea() {
+	return 3.14 * radius * radius;
+}
+
+int main() {
+	Circle donut;
+	Circle pizza(30);
+	cout << "도넛의 면적 : " << donut.getArea() << endl;
+	cout << "피자의 면적 : " << pizza.getArea() << endl;
+	Circle *p;//포인터 선언
+	p = &donut;//주소할당 
+	cout << "도넛의 면적 : " << p->getArea() << endl;
+	p = &pizza;
+	cout << "피자의 면적 : " << p->getArea() << endl;
+	return 0;
+}
