@@ -1,0 +1,33 @@
+#include <iostream>
+#include "CoffeeMachine.h"
+using namespace std;
+
+CoffeeMachine::CoffeeMachine(int c, int w, int s) {
+	coffee = c; water = w; sugar = s;
+}
+
+void CoffeeMachine::drinkEspresso() {
+	if (coffee < 1 || water < 1)
+		return;
+	coffee--; water--;
+}
+
+void CoffeeMachine::drinkAmericano() {
+	if (coffee < 1 || water < 2)
+		return;
+	coffee--; water = water - 2;
+}
+
+void CoffeeMachine::drinkSugarCoffee() {
+	if (coffee < 1 || water < 2 || sugar < 1)
+		return;
+	coffee--; water = water - 2; sugar--;
+}
+
+void CoffeeMachine::fill() {
+	coffee = 10; water = 10; sugar = 10;
+}
+
+void CoffeeMachine::show() {
+	cout << "커피  머신 상태, 커피:" << coffee << " 물:" << water << " 설탕:" << sugar << endl;
+}
