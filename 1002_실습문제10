@@ -1,0 +1,44 @@
+#include <iostream>
+#include "Add.h"
+#include "Sub.h"
+#include "Mul.h"
+#include "Div.h"
+
+using namespace std;
+
+int main() {
+	Add a;
+	Sub s;
+	Mul m;
+	Div d;
+	while (true) {
+		cout << "두 정수와 연산자를 입력하세요 : ";
+		int n1, n2;
+		char op;
+		cin >> n1 >> n2 >> op;
+		switch (op)
+		{
+		case '+':
+			a.setValue(n1, n2);
+			cout << "덧셈 결과 : " << a.calculate() << endl;
+			break;
+		case '-':
+			s.setValue(n1, n2);
+			cout << "뺄셈 결과 : " << s.calculate() << endl;
+			break;
+		case '*':
+			m.setValue(n1, n2);
+			cout << "곱셈 결과 : " << m.calculate() << endl;
+			break;
+		case '/':
+			d.setValue(n1, n2);
+			cout << "나눗셈 결과 : " << d.calculate() << endl;
+			break;
+		default:
+			cout << "잘못 입력하셨습니다";
+			break;
+		}
+		cout << endl;
+	}
+	return 0;
+}
