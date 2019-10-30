@@ -1,0 +1,12 @@
+#include <iostream>
+#include "Oval.h"
+using namespace std;
+
+Oval::Oval() { width = 1; height = 1; }
+Oval::Oval(int x, int y) { width = x, height = y; }
+void Oval::set(int n, int m) { width = n, height = m; }
+void Oval::show() {
+	cout << "현재 객체의 가로 :" << width << ", 세로 : " << height << endl;
+}
+int Oval::getWidth() { return width; }
+int Oval::getHeight() { return height; }
