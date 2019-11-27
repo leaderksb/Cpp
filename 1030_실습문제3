@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	string text;
+	cout << "문자열 입력 >>";
+	getline(cin, text);
+
+	int count = 0; //문자 'a'의 개수를 카운팅
+/*	for (int i = 0; i < text.length(); i++) {
+		if (text.at(i) == 'a')
+			count = count + 1;
+	}										*/
+
+	int index = 0;
+	while (true) {
+		index = text.find('a', index); //index부터 'a'찾기
+		if (index == -1) break;
+		count = count + 1; //'a'의 개수 카운팅
+		index = index + 1; //현재 찾은 바로 다음 위치부터 찾기위해서
+	}
+	
+	cout << "문자 a는 " << count << "개 있습니다.";
+	return 0;
+}
