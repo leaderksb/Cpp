@@ -1,0 +1,14 @@
+#include <iostream>
+#include "Circle.h"
+#include "CircleManager.h"
+using namespace std;
+int main() {
+	cout << "원의 개수 >> ";
+	int size;
+	cin >> size;
+	CircleManager food(size);
+	food.searchByName();
+	food.searchByArea();
+
+	return 0;
+}
