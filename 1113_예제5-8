@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+char c = 'a';
+char& find() { //참조리턴
+	return c;
+}
+
+char& search(char s[], int index) {
+	return s[index];
+}
+
+int main() {
+	char name[] = "Mike";
+	cout << name << endl;
+	search(name, 0) = 'S'; //name[0] ='S';
+	cout << name << endl;
+	char& ref = search(name, 2); //name[2]
+	ref = 't';
+	cout << name << endl;
+	cout << c << endl;
+	find() = 'b'; //c = 'b';
+	cout << c << endl;
+	return 0;
+}
