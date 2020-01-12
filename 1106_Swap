@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void swap(int* a, int* b) { // 형식 매개변수
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int main() {
+	int m = 2, n = 9;
+	cout << "Swap 전 : m = " << m << ", n = " << n << endl;
+	swap(m, n); // 함수호출, 실매개변수, 실인수
+	cout << "Swap 후 : m = " << m << ", n = " << n << endl;
+	swap(&m, &n);
+	return 0;
+}
