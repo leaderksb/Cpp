@@ -1,0 +1,20 @@
+#include <iostream>
+#include "Circle.h"
+using namespace std;
+
+Circle::Circle()
+{
+	radius = 1;
+	cout << "생성자 실행 radius = " << radius << endl;
+}
+
+Circle::Circle(int radius)
+{
+	this->radius = radius;
+	cout << "생성자 실행 radius = " << this->radius << endl;
+}
+
+Circle::~Circle()
+{
+	cout << "소멸자 실행 radius = " << radius << endl;
+}
