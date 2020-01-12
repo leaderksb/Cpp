@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int bigger(int* a, int* b) {
+	if (*a > *b)
+		return *a;
+	else
+		return *b;
+}
+
+int main() {
+	int x, y;
+	cout << "두 정수를 입력 : ";
+	cin >> x >> y;
+	cout << "더 큰 수는 " << bigger(&x, &y) << endl;
+	return 0;
+}
