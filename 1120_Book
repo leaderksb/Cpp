@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <cstring>
+#include "Book.h"
+using namespace std;
+
+Book::Book(Book& c) {
+	int len = strlen(c.title);
+	this->title = new char[len + 1];
+	strcpy(this->title, c.title);
+	this->price = c.price;
+};
+
+Book::Book(const char* title, int price) { // 매개변수 2개인 생성자
+	int len = strlen(title);
+	this->title = new char[ len + 1 ];
+	strcpy(this->title, title);
+	this->price = price;
+}
+
+Book::~Book() {
+	delete[] title;
+}
+
+void Book::set(const char* title, int price) {
+	strcpy(this->title, title);
+	this->price = price;
+}
