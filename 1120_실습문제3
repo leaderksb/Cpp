@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void combine(string t1, string t2, string &t3) {
+	t3 = t1 + " " + t2;
+}
+
+int main() {
+	string text1("I love you"),
+		text2("very much");
+	string text3;
+	cout << text3 << endl; // text3은 공백
+	combine(text1, text2, text3);
+	cout << text3 << endl; // combine()을 사용하여 text3 값 입력
+	return 0;
+}
