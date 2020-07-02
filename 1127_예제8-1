@@ -1,0 +1,30 @@
+#include <iostream>
+#include "Point.h"
+#include "ColorPoint.h"
+using namespace std;
+
+int main() {
+	Point p;
+	ColorPoint cp;
+	ColorPoint* pCP;
+	Point* pBP;
+	pCP = &cp;
+	pBP = pCP;
+/*	cp.set(3, 4);
+	cp.setColor("Red");
+	cp.showColorPoint();	*/
+	pCP->set(3, 4);
+	pCP->setColor("Red");
+	pCP->showColorPoint();
+	pBP->set(10, 20);
+//	pBP->showColorPoint();
+	pCP->showColorPoint();
+	
+	ColorPoint *test;
+	test = (ColorPoint *)pCP; // 다운캐스팅
+	test->set(50, 100);		  // cp.set(50, 100);, pCP->set(50, 100);
+	test->setColor("Blue");	  // cp.setColor("Blue");
+	test->showColorPoint();	  // cp.showColorPoint();
+
+	return 0;
+}
