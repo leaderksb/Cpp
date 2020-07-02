@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+	void paint() {
+		draw();
+	}
+	virtual void draw() { cout << "부모 도형그리기" << endl; }
+};
+
+class Circle : public Shape {
+public:
+	virtual void draw() { cout << "원그리기" << endl; }
+};
+
+class Rect : public Shape {
+public:
+	virtual void draw() { cout << "사각형그리기" << endl; }
+};
+
+int main() {
+	Shape *pShape = new Shape();
+	pShape->paint();
+	delete pShape;
+	Shape *pShape2 = new Circle(); // 업캐스팅
+	pShape2->paint();
+	delete pShape2;
+	Shape *pShape3 = new Rect();   // 업캐스팅
+	pShape3->paint();
+	delete pShape3;
+	return 0;
+}
