@@ -1,0 +1,12 @@
+#include <iostream>
+#include "SmartTv.h"
+using namespace std;
+
+int main() {
+	SmartTv htv("192.0.0.1", 32);
+	cout << "size = " << htv.getSize() << endl;
+	cout << "videonln = " << boolalpha << htv.getVideoIn() << endl;
+	cout << " IP = " << htv.getIpAddr() << endl;
+	return 0;
+
+}
