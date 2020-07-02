@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Vehicle{
+public: int power;
+};
+
+class Car : virtual public Vehicle {
+public: string color;
+};
+
+class Airplane : virtual public Vehicle {
+public: int altitude;
+};
+
+class FlyingCar : public Car, public Airplane {
+public: void go() { cout << "비행시작" << endl; }
+
+};
+
+int main() {
+	FlyingCar fCar;
+	fCar.go();
+	fCar.altitude = 2000;
+	fCar.color = "Pink"; // 색깔을 string 타입으로 넣었습니다
+	fCar.power = 2000;
+	cout << "현재 비행자동차 고도 = " << fCar.altitude << endl;
+	cout << "현재 비행자동차 색깔 = " << fCar.color << endl;
+	cout << "현재 비행자동차 출력 = " << fCar.power << endl;
+	return 0;
+}
